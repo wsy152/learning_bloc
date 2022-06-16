@@ -13,10 +13,11 @@ class ExampleBloc extends Bloc<ExampleEvent,ExampleState>{
     on<ExampleFindNameEvent>(_findNames);
   }
 
-  FutureOr<void> _findNames(
-      ExampleFindNameEvent event, Emitter<ExampleState> emit) async {
+  FutureOr<void> _findNames(ExampleFindNameEvent event, Emitter<ExampleState> emit) async {
 
-        final names = ["edvaldo", "carla", "Felipe"];
+        final names = ["edvaldo", "carla", "Felipe","Jessica", "Tereza", "Carlos"];
+
+        await  Future.delayed(const Duration(seconds: 3));
 
         emit(ExampleStateData(names: names));
 

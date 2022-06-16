@@ -37,6 +37,21 @@ class BlocExample extends StatelessWidget {
                      return const SizedBox.shrink();
                      
                    }), 
+                   BlocSelector<ExampleBloc,ExampleState,bool>(
+                    selector: ((state) {
+                      if(state is ExampleStateInitial){
+                        return true;
+                      }
+                      return false;
+                    }), 
+                    builder: (context,showLoader){
+                      if(showLoader ){
+                        return const Expanded(child: Center(
+                          child: CircularProgressIndicator(),
+                        ));
+                      }
+                      return const SizedBox.shrink();
+                    }),
                   
                  
 
