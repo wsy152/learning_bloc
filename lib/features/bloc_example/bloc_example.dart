@@ -12,6 +12,12 @@ class BlocExample extends StatelessWidget {
    @override
    Widget build(BuildContext context) {
        return Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){
+            context.read<ExampleBloc>().add(ExampleAddNameEvent(name: 'Edvaldo 1235'));
+
+          },
+        ),
            appBar: AppBar(title: const Text('Bloc Example'),),
            body: BlocListener<ExampleBloc,ExampleState>(
             listenWhen: ((previous, current) {
@@ -88,6 +94,7 @@ class BlocExample extends StatelessWidget {
                            return ListTile(
                             onTap: (){
                               context.read<ExampleBloc>().add(ExampleRemoveNameEvent(nome: name));
+                              
                             },
                              title: Text(name),
                            );
