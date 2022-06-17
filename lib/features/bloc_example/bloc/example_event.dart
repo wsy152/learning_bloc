@@ -6,4 +6,8 @@ class ExampleFindNameEvent extends ExampleEvent {}
 
 class ExampleAddNameEvent extends ExampleEvent{}
 
-class ExampleRemoveNameEent extends ExampleEvent{}
+class ExampleRemoveNameEvent extends ExampleEvent{
+  final String nome;
+
+  ExampleRemoveNameEvent({required this.nome});
+}
